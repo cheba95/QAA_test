@@ -16,7 +16,7 @@ class SbisPageLocators: # создали класс локаторов для с
     LOCATOR_OF_KAMCHATKA = (By.XPATH, "//ul[@class='sbis_ru-Region-Panel__list-l']//span[contains(@title,'Камчат')]") # локатор Камчатского края для смены региона
     LOCATOR_PARTNERS_LIST_REGION_TOWN = (By.CLASS_NAME, 'sbisru-Contacts-City__item-name') # локатор для проверки соответствия первого города в блоке со списком партнеров выбранному региону
     LOCATOR_DOWNLOAD = (By.CSS_SELECTOR, "[href='/download']") # локатор для поиска кнопки "Скачать локальные версии"
-    LOCATOR_WEB_INSTALLER = (By.XPATH, "//a[contains(@href,'plugin-setup-web')]") # локатор для поиска ссылки для скачивания веб-установщика
+    LOCATOR_WEB_INSTALLER = (By.XPATH, "//a[contains(@href,'plugin-setup-web')]") # локатор для поиска ссылки для скачивания веб-установщика плагина СБИС
 
 class TensorPageLocators:
     LOCATOR_POWER_IN_PEOPLE = (By.XPATH, "//p[text()='Сила в людях']") # локатор для поиска блока "Сила в людях"
