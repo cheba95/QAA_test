@@ -39,14 +39,14 @@ class SbisPage: # создаем класс SbisPage
             found = True # в случае успешного нахождения элемента - ставим флаг True, элемент найден
         except:
             found = False # если элемент не найден - ставим флаг False
-        assert found, 'List of parters is not found'  # проверяем, найден ли объет, в случае, если не найден, в тесте возвращается указанный текст ошибки
+        assert found, 'Error. List of parters is not found'  # проверяем, найден ли объет, в случае, если не найден, в тесте возвращается указанный текст ошибки
     def check_partners_list_is_not_empty(self): # метод проверки, что блок не пустой и в нем есть хотя бы один элемент с адресом партнера
         try:
             WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located(SbisPageLocators.LOCATOR_ELEMENT_OF_PARTNERS_LIST)) # в течение до 10 секунд пробуем найти блок
             found = True # в случае успешного нахождения элемента - ставим флаг True, элемент найден
         except:
             found = False # если элемент не найден - ставим флаг False
-        assert found, 'List of parters has no elements' # проверяем, найден ли объет, в случае, если не найден, в тесте возвращается указанный текст ошибки
+        assert found, 'Error. List of parters has no elements' # проверяем, найден ли объет, в случае, если не найден, в тесте возвращается указанный текст ошибки
     def change_region(self): # метод нажатия на название региона с целью его смены
         change_region = WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable(SbisPageLocators.LOCATOR_CHANGE_REGION)) # в течение до 10 секунд пробуем найти элемент, если находим, присваиваем его переменной
         change_region.click() # нажимаем на кнопку, отображаем список регионов
@@ -70,7 +70,7 @@ class SbisPage: # создаем класс SbisPage
             found = True # в случае успешного нахождения элемента - ставим флаг True, элемент найден
         except:
             found = False # если элемент не найден - ставим флаг False
-        assert found, 'Download button is not found' # проверяем, найден ли объет, в случае, если не найден, в тесте возвращается указанный текст ошибки
+        assert found, 'Error. Download button is not found' # проверяем, найден ли объет, в случае, если не найден, в тесте возвращается указанный текст ошибки
     def click_download_local_versions(self): # метод нажатия на кнопку "Скачать локальные версии"
         download = WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable(SbisPageLocators.LOCATOR_DOWNLOAD)) # ищем ссылку на страницу со скачиванием версий в течение до 10 секунд, если находим - присваиваем переменной
         expected_url = download.get_attribute('href') # находим URL страницы с локальными версиями
