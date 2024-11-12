@@ -78,15 +78,15 @@ class SbisPage: # создаем класс SbisPage
         WebDriverWait(self.browser, 10).until(EC.url_to_be(expected_url)) # ждем загрузки страницы
     def download_web_installer(self): # метод скачивания веб-установщика
         download = WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable(SbisPageLocators.LOCATOR_WEB_INSTALLER)) # ищем в течение до 10 секунд кнопку скачивания веб-установщика
-        link_url = download.get_attribute('href') # получаем ссылку для скачивания веб-установщика
-        response = requests.get(link_url) # делаем запрос по ссылке и получаем ответ
+        link_url = download.get_attribute('href') # сохраняем в переменную ссылку для скачивания веб-установщика
+        response = requests.get(link_url) # делаем запрос по ссылке и получаем ответ, сохраняем в переменную
         response.raise_for_status() # проверяем, понял ли сервер запрос 
         file_name = link_url[link_url.rfind('/') + 1:] # создаем переменную с названием файла. Название файла берем из конца ссылки на него
         with open(file_name, 'wb') as file: # записываем файл в папку с тестом
             file.write(response.content) 
         return download, file_name # возвращаем элемент с кнопкой скачивания и названием файла для последующих проверок
     def check_file_is_downloaded(self): # метод проверки того, что файл скачан
-        file_name = self.download_web_installer()[1] # получаем из метода download_web_installer название файла
+        file_name = self.download_web_installer()[1] # получаем из метода download_web_installer название файла и сохраняем в переменную
         assert os.path.isfile(file_name), 'Error. File does not exists' # проверяем наличие файла, иначе в тесте появляется ошибка с указанным текстом
     def check_size_of_file(self): # метод проверки соответствия размера скачанного файла размеру файла, указанному на сайте
         download, file_name = self.download_web_installer() # берем кнопку скачивания файла и имя файла из download_web_installer
