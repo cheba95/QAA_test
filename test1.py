@@ -11,5 +11,3 @@ def test_sbis_search(browser):
     tensor_main_page.check_tensor_about() # проверили, открылась ли страница "https://tensor.ru/about"
     tensor_main_page.check_working_block() # проверили, есть ли раздел "Работаем"
     tensor_main_page.check_size_of_working_images() # проверили, что у всех фотографий в блоке "Работаем" одинаковая высота и ширина
-
-
