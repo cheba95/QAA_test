@@ -7,7 +7,7 @@ def test_sbis_search(browser):
     sbis_main_page.check_url('https://sbis.ru/contacts/66-sverdlovskaya-oblast') # проверили, что url страницы соответствует домашнему региону (в нашем случае - Свердловская область)
 # тестовый заведомо ошибочный вариант для проверки работоспособности теста
     # sbis_main_page.check_url('https://sbis.ru/contacts/41-kamchatskij-kraj')
-    sbis_main_page.check_page_title('Свердловск') # проверили, что title страницы в браузере соответствует домашнему региону
+    sbis_main_page.check_page_title('Свердловск') # проверили, что название (title) страницы в браузере соответствует домашнему региону
 # тестовый заведомо ошибочный вариант для проверки работоспособности теста
     # sbis_main_page.check_page_title('Камчат')
     sbis_main_page.check_region('Свердловск') # проверили, что регион в блоке "Контакты" соответствует домашнему региону
