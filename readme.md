@@ -71,7 +71,7 @@
 
 - Тесты запускались из командной строки Windows, а также из терминала VS Code посредством команд `pytest test1.py`, `pytest test2.py`, `pytest test3.py`;
 - для того, чтобы сгенерировать отчет:
-  - для теста № 1 - выполнить в командной строке или терминале `pytest  --html=report1.html --self-contained-html test1.py`;
+  - для теста № 1 - выполнить в командной строке или терминале `pytest --html=report1.html --self-contained-html test1.py`;
   - для теста № 2 - `pytest --html=report2.html --self-contained-html test2.py`;
   - для теста № 3 - `pytest --html=report3.html --self-contained-html test3.py`;
 - файлы отчетов выложены в репозитории в папке _reports_;
