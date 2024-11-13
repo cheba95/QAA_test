@@ -1,0 +1,20 @@
+from SbisPages import SbisPage 
+
+def test_sbis_search(browser):
+    sbis_main_page = SbisPage(browser) 
+    sbis_main_page.go_to_sbis() 
+    sbis_main_page.click_contacts() 
+    sbis_main_page.check_url('https://sbis.ru/contacts/66-sverdlovskaya-oblast') 
+    sbis_main_page.check_page_title('Свердловск') 
+    sbis_main_page.check_region('Свердловск') 
+    sbis_main_page.check_partners_list() 
+    sbis_main_page.check_partners_list_region_town('Екатеринбург') 
+    sbis_main_page.check_partners_list_is_not_empty() 
+    sbis_main_page.change_region() 
+    sbis_main_page.choose_kamchatka() 
+    sbis_main_page.check_url('https://sbis.ru/contacts/41-kamchatskij-kraj') 
+    sbis_main_page.check_page_title('Камчат') 
+    sbis_main_page.check_region('Камчат') 
+    sbis_main_page.check_partners_list() 
+    sbis_main_page.check_partners_list_region_town('Петропавловск-Камчатский') 
+    sbis_main_page.check_partners_list_is_not_empty()
